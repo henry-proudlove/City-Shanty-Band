@@ -1,0 +1,1347 @@
+/*
+Theme Name: Hand Crafted Shanty
+Theme URI: http://www.henryproudlove.com
+Author: Henry Proudlove
+Author URI: http://www.henryproudlove.com
+Description: Custom Field for http://cityshantyband.com built on top of Hand Crafted WP by Randy Jensen and Randy Hoyt
+Version: 0.2
+*/
+
+/* html5doctor.com Reset Stylesheet \\v1.6.1 \\ Last Updated: 2010-09-17 \\ http://richclarkdesign.com \\ @rich_clark */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display:block; }
+nav ul { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0; }
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+input, select { vertical-align:middle; }
+
+/*
+ *
+ * Base Typography 
+ *
+ */
+body { font:12px/1.231 sans-serif; *font-size:small; }
+select, input, textarea, button { font:99% sans-serif; }
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+/*
+ *
+ * Base Styles 
+ *
+ */
+body, select, input, textarea { 
+  color: #444; 
+  font-family: futura-pt,'Gill Sans', 'Gill Sans MT', GillSans, Calibri, 'Trebuchet MS', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: #ebebeb;
+  font-weight: 400;	
+}
+/* Headers (h1,h2,etc) have no default font-size or margin,
+   you'll want to define those yourself. */ 
+h1,h2,h3,h4,h5,h6 { font-weight: normal; }
+/* always force a scrollbar in non-IE */ 
+html { overflow-y: scroll; }
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: none; }
+a, a:active, a:visited
+
+{ 
+color: #40a5c7;
+text-decoration: none;
+padding-left: 2px;
+
+border-radius: 2px;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+
+background: transparent;
+
+transition: color 0.3s, background 0.3s;
+-moz-transition: color 0.3s, background 0.3s;
+-webkit-transition: color 0.3s, background 0.3s;
+-o-transition: color 0.3s, background 0.3s;
+}
+
+span a:hover, p a:hover, #colophon a:hover, .music a:hover
+{
+color: white;
+background:#40a5c7
+}
+
+#colophon span
+{
+margin: 0 10px;
+}
+
+
+
+a > img
+{
+-moz-transition: opacity 0.3s;
+-webkit-transition: opacity 0.3s;
+-o-transition: opacity 0.3s;
+transition: opacity 0.3s;
+}
+
+a > img:hover
+{
+opacity: 0.8;
+filter:Alpha(opacity=80);
+border:none;
+}
+
+ul, ol { margin-left: 1.8em; }
+ol { list-style-type: decimal; }
+/* Remove margins for navigation lists */
+nav ul, nav li { margin: 0; } 
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+td, td img { vertical-align: top; } 
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+pre { 
+  padding: 15px; 
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
+}
+textarea { overflow: auto; } /* thnx ivannikolic! www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+.ie6 legend, .ie7 legend { margin-left: -7px; } /* thnx ivannikolic! */
+/* align checkboxes, radios, text inputs with their label
+   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+/* webkit browsers add a 2px margin outside the chrome of form elements */  
+button, input, select, textarea { margin: 0; }
+/* colors for form validity */
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid { 
+      border-radius: 1px;
+    -moz-box-shadow: 0px 0px 5px red; 
+ -webkit-box-shadow: 0px 0px 5px red; 
+         box-shadow: 0px 0px 5px red;
+}
+.no-boxshadow input:invalid, 
+.no-boxshadow textarea:invalid { background-color: #f0dddd; }
+/* These selection declarations have to be separate.
+   No text-shadow: twitter.com/miketaylr/status/12228805301 
+   Also: hot pink. */
+::-moz-selection{ background: #66bfdb; color:#fff; text-shadow: none; }
+::selection { background:#66bfdb; color:#fff; text-shadow: none; } 
+/*  j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; } 
+/* make buttons play nice in IE:    
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {width: auto; overflow: visible;}
+/* bicubic resizing for non-native sized IMG: 
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/*
+ *
+ * Nonsemantic Base Styles 
+ *
+ */
+/* for image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; } 
+/* Hide only visually, but have it available for screenreaders 
+   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  */
+.visuallyhidden { position: absolute !important;    
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+/* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
+.clearfix:before, .clearfix:after {
+  content: "\0020"; display: block; height: 0; visibility: hidden;	
+} 
+.clearfix:after { clear: both; }
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+/*
+ *
+ * Media queries for responsive design
+ * These follow after primary styles so they will successfully override. 
+ *
+ */
+@media all and (orientation:portrait) { 
+  /* Style adjustments for portrait mode goes here */
+}
+@media all and (orientation:landscape) { 
+  /* Style adjustments for landscape mode goes here */
+}
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
+   Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {  
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
+     j.mp/textsizeadjust 
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+/*
+ *
+ * Base Print Styles, inline to save the HTTP request
+ *
+ */
+@media print {
+  * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a:after { content: " (" attr(href) ")"; } 
+  abbr:after { content: " (" attr(title) ")"; }
+  .ir a:after { content: ""; }  /* Don't show links for images */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */ 
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}
+
+/*
+ *
+ * Structure
+ *
+ */
+
+#page {
+	display: block;
+}
+#primary {
+	float: left;
+	margin: 0 -240px 0 0;
+	width: 100%;
+}
+
+#main .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 220px;
+}
+#colophon {
+	clear: both;
+	display: block;
+	width: 100%;
+}
+
+.content-hide
+{
+max-height: 1px;
+position: fixed;
+top: -1px;
+overflow: hidden;
+}
+
+.featured-holder
+{
+display:-moz-box;
+-moz-box-orient:horizontal;
+-moz-box-pack:center;
+-moz-box-align:center;
+
+/* Safari and Chrome */
+display:-webkit-box;
+-webkit-box-orient:horizontal;
+-webkit-box-pack:center;
+-webkit-box-align:center;
+
+/* W3C */
+display:box;
+box-orient:horizontal;
+box-pack:center;
+box-align:center;
+}
+
+
+/* Increase the size of the content area for templates without sidebars */
+.full-width #content,
+.image-attachment #content {
+	margin: 0;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+}
+.alignright {
+	display: inline;
+	float: right;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.entry-header
+{
+padding: 0 0 20px;
+}
+
+.section-title, #colophon, #csb-social-btns
+{
+padding: 50px 0;
+background: url('images/divider.gif') top center no-repeat;
+background-size: 15% 1px;
+}
+
+#colophon
+{
+margin-top: 50px;
+}
+
+h1
+{
+padding-bottom: 10px;
+}
+
+/*
+ *
+ * Header
+ *
+ */
+#site-title {
+	font-size: 2em;
+	font-weight: bold;
+	margin: .67em 0;
+}
+#site-description {
+	font-size: 1em;
+	font-weight: normal;
+	margin: 0 0 1em;
+}
+
+.featured-content, #content
+{
+width: 800px;
+/*max-width: 800px;
+width: 85%;*/
+min-width: 300px;
+margin: 0 auto;
+text-align: center;
+}
+
+.featured-content
+{
+margin: 30px auto 15%;
+}
+
+.single #content, .page #content
+{
+margin: 0 auto;
+padding: 60px 0;
+}
+
+.home #content
+{
+margin: 0 auto;
+padding: 0 0 60px;
+}
+
+
+/*Headers*/
+
+h1
+{
+font-size: 350%;
+font-style: normal;
+font-weight: 500;
+}
+
+.error404 h1
+{
+font-size: 1700%;
+}
+
+#intro h1, .single h1, .page h1
+{
+width:100%;
+}
+
+#intro h1
+{
+padding-bottom: 30px;
+}
+
+h2
+{
+font-size: 233.34%;
+font-weight: 500;
+}
+
+h3
+{
+font-size: 166.67%;
+font-weight: 400;
+}
+
+.entry-btn a, .entry-summary p, .entry-meta
+{
+font-size: 166.67%;
+padding-bottom: 20px;
+}
+
+.entry-meta span, #featured .entry-summary span
+{
+display: inline-block;
+padding: 0 10px;
+}
+
+h1
+{
+white-space:nowrap;
+display: inline-block;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active
+{
+color:#444;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover
+{
+background: transparent;
+color: #40a5c7;
+}
+
+.white-text h1 a:hover
+{
+color: #7bcbe4;
+}
+
+.white-text h1 a, .white-text h1 a:visited, .white-text h1 a:active
+{
+color: white;
+}
+
+.white-text p
+{
+color: white;
+}
+
+#featured .white-text .media-container img
+{
+border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.white-text
+{
+background-color : black;
+}
+
+.entry-content
+{
+padding-bottom: 15px;
+}
+.entry-content p
+{
+font-family: Georgia, serif;
+font-size: 125%;
+text-transform: none;
+letter-spacing: 1px;
+padding: 8px 0;
+text-align: justify;
+line-height: 134%;
+font-style: italic;
+color: #555;
+}
+
+#intro .entry-content p
+{
+text-align: center;
+}
+
+.home #content
+{
+paadding-top: 0;
+}
+
+#content section
+{
+margin: 50px 0 70px;
+}
+
+/*
+ *
+ * Menu
+ *
+ */
+#access {
+	background: #eee;
+	display: block;
+	float: left;
+	margin: 0 auto 1em;
+	width: 100%;
+}
+#access ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+#access li {
+	float: left;
+	position: relative;
+}
+#access a {
+	display: block;
+	line-height: 2em;
+	padding: 0 1em;
+	text-decoration: none;
+}
+#access ul ul {
+	box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+	display: none;
+	float: left;
+	position: absolute;
+	top: 2em;
+	left: 0;
+	z-index: 99999;
+}
+#access ul ul ul {
+	left: 100%;
+	top: 0;
+}
+#access ul ul a {
+	background: #333;
+	color: #fff;
+	line-height: 1em;
+	padding: .5em .5em .5em 1em;
+	width: 10em;
+	height: auto;
+}
+#access li:hover > a,
+#access ul ul :hover > a {
+	background: #333;
+	color: #fff;
+}
+#access ul ul a:hover {
+	background: #000;
+}
+#access ul li:hover > ul {
+	display: block;
+}
+
+
+/*
+ *
+ * Content
+ *
+ */
+#content nav {
+	display: inline-block;
+	overflow: hidden;
+}
+#content nav .nav-previous {
+	float: left;
+	width: 50%;
+}
+#content nav .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+#content #nav-above {
+	display: none;
+}
+.paged #content #nav-above,
+.single #content #nav-above {
+	display: block;
+}
+#nav-below {
+	margin: 1em 0 0;
+}
+.page-link {
+	margin: 0 0 1em;
+}
+
+
+/*
+ *
+ * Images
+ *
+ */
+/*
+Resize images to fit the main content area.
+- Applies only to images uploaded via WordPress by targeting size-* classes.
+- Other images will be left alone. Use "size-auto" class to apply to other images.
+*/
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img,
+.widget-area img,
+.media-container img{
+	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect ratio. */
+}
+img.alignleft {
+	margin-right: 1em;
+}
+img.alignright {
+	margin-left: 1em;
+}
+.wp-caption {
+	padding: .5em;
+	text-align: center;
+}
+.wp-caption img {
+	margin: .25em;
+}
+.wp-caption .wp-caption-text {
+	margin: .5em;
+}
+
+#featured .media-container img
+{
+max-width: 40%;
+height: auto;
+border: 1px solid rgba(0, 0, 0, 0.2);
+}
+/* Forms - Class for labelling required form items */
+.required {
+	color: #cc0033;
+}
+
+
+#featured article
+{
+-webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+
+/*
+ *
+ * Comments
+ *
+ */
+article.comment {
+	display: block;
+}
+#respond input[type=text] {
+	float: left;
+	margin: 0 1em 0 0;
+	width: 60%;
+}
+#respond .comment-form-comment label {
+	display: none;
+}
+#respond textarea {
+	margin: 0 1em 1em 0;
+	float: left;
+	width: 80%;
+}
+#respond .form-allowed-tags {
+	clear: both;
+	width: 80%;
+}
+#respond .form-allowed-tags code {
+	display: block;
+}
+
+/*
+Buttons
+*/
+
+.entry-btn a
+{
+color:white;
+background: #66bfdb;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+transition: background-color 0.3s;
+-moz-transition: background-color 0.3s;
+-webkit-transition: background-color 0.3s;
+-o-transition: background-color 0.3s;
+padding: 8px 40px;
+
+}
+
+#featured .entry-btn a
+{
+display: inline-block;
+}
+
+#content .entry-btn a
+{
+padding: 6px 40px;
+display: inline-block;
+font-size: 125%
+}
+
+.entry-btn a:hover
+{
+text-decoration: none;
+background: #40a5c7;
+}
+
+.skip-link
+{
+text-align: center;
+width:100%;
+}
+
+.skip-link a
+{
+width:19px;
+height: 13px;
+padding: 10px 70px 8px;
+background: url('images/navigation.png') no-repeat;
+background-color: #555;
+text-indent: -9000px;
+display: inline-block;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+
+.skip-link a:hover
+{
+background-color: #40a5c7;
+}
+
+#content-skip
+{
+position: absolute;
+/*bottom: 0px;*/
+transition: bottom 0.3s;
+-moz-transition: bottom 0.3s;
+-webkit-transition: bottom 0.3s;
+-o-transition: bottom 0.3s;
+}
+
+.content-skip-hide
+{
+bottom: -31px;
+opacity: 0;
+}
+
+.content-skip-show
+{
+opacity: 1;
+bottom: 0px;
+}
+
+#content-skip a
+{
+background-position: center -31px;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+#featured-skip a
+{
+background-position: center top;
+-webkit-border-bottom-right-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+
+}
+
+#featured-skip
+{
+position:relative;
+transition: top 0.3s;
+-moz-transition: top 0.3s;
+-webkit-transition: top 0.3s;
+-o-transition: top 0.3s;
+}
+
+.featured-skip-hide
+{
+top: -31px;
+opacity: 0;
+}
+
+.featured-skip-show
+{
+opacity: 1;
+top: 0px;
+}
+
+/* Band Gallery */
+
+#band-gallery
+{
+width: 650px
+height: 366px;
+}
+
+.galleria-container
+{
+margin: 0 auto;
+}
+
+#galleria{height:400px;}
+
+
+/*Social btns*/
+
+#csb-social-btns
+{
+height: 25px;
+padding-bottom: 15px;
+}
+
+
+#csb-social-btns div
+{
+display:block;
+float:left;
+}
+
+#csb-social-btns a
+{
+display: inline-block;
+margin: 0 4px;
+height: 25px;
+}
+
+/*#csb-social-btns a
+{
+display:block;
+
+}*/
+
+.social-exit-lnk, .social-exit-lnk:active
+{
+background: url('images/navigation.png');
+text-indent:-9000px;
+padding: 0;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+background-color: #444;
+}
+
+.social-exit-lnk:hover
+{
+background-color: #40a5c7;
+}
+
+#social-exits #soundcloud
+{
+width:45px;
+background-position: left -62px;
+}
+
+#social-exits .soundcloud a:hover{
+
+}
+
+#social-exits #twitter
+{
+width:37px;
+background-position: left -87px;
+}
+
+#social-exits #fb-page
+{
+width:12px;
+background-position: left bottom;
+}
+
+#social-exits 
+{
+margin-right: 10px;
+}
+
+#social-widgets 
+{
+margin-top: 3px;
+}
+
+#social-widgets > span
+{
+margin-right: 5px;
+}
+
+
+#fb-like iframe
+{
+position: relative;
+top: 1px;
+}
+
+/*Music*/
+
+.music
+{
+font-size: 125%;
+padding-bottom: 20px;
+}
+
+.music > a, .music > span
+{
+font-style: italic;
+margin: 0 10px;
+}
+
+.music p
+{
+margin-left:20px;
+}
+
+/*Media Player*/
+
+.ywp-playlist .ywp-playlist-arrow, .ywp-playlist-count, .ywp-tray-content-pane .ywp-tray-content-close-x, .ywp-media-content-pane a.ywp-tray-content-close, .ywp-thumbnail-default-img, .ywp-video-pane .ywp-video-queued-play a, .ywp-track-btns .ywp-track-error, .ywp-track-btns .ywp-find-on-page, .ywp-page-play-pause .ywp-page-btn, .ywp-container .ywp-btn-notify-close, .ywp-body-buttons .ywp-mod span, .ywp-container .ywp-hdr-btns a, .ywp-volume-slider .ywp-sliderbase, .ywp-volume-slider .ywp-slider-rail, .ywp-container .ywp-btn-collapse-player span, .ywp-container .ywp-btn-expand-player span, .ywp-volume-slider .ywp-slider-thumb, .ywp-seek-slider .ywp-slider-thumb, .ywp-tray .ywp-btn-playlist, .ywp-int-btn-replay .ywp-int-btn-replay-img, .ywp-int-play-next .ywp-int-pn-med-playIcon, .ywp-int-play-next .ywp-int-pn-video-thumbnail, .ywp-int-play-next .ywp-int-pn-audio-thumbnail, .ywp-related-hover-play span, .ywp-int-related-media .ywp-int-related-prev, .ywp-int-related-media .ywp-int-related-next, .ywp-related-carousel-item .ywp-related-img
+{
+background-image: url(images/black-theme.png) !important;
+}
+
+.ywp-page-play-pause .ywp-page-btn {
+margin-right: 4px !important;
+}
+
+.ywp-page-play-pause .ywp-page-btn, .ywp-page-play-pause .ywp-page-btn:hover
+{
+top: 2px !important;
+}
+
+
+/*Gigs*/
+
+#gigs h3
+{
+font-style: italic;
+border-bottom: 1px solid #dadada;
+padding-bottom: 7px;
+}
+
+#gigs .entry-meta
+{
+font-size: 116.67%;
+}
+
+#gigs .entry-header
+{
+padding-bottom: 10px;
+}
+
+#gigs article
+{
+margin-bottom: 20px;
+}
+
+/*Shop*/
+
+#shop img
+{
+margin-bottom: 20px;
+}
+
+/*
+	AnythingSlider v1.7+ Default (base) theme
+	By Chris Coyier: http://css-tricks.com
+	with major improvements by Doug Neiner: http://pixelgraphics.us/
+	based on work by Remy Sharp: http://jqueryfordesigners.com/
+*/
+
+/*****************************
+  SET DEFAULT DIMENSIONS HERE
+ *****************************/
+/* change the ID to match your slider */
+#slider {
+	width: 700px;
+	height: 390px;
+	list-style: none;
+	/* Prevent FOUC (see FAQ page) and keep things readable if javascript is disabled */
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+/* Opera width restriction */
+.anythingBase { max-width: 32766px; }
+
+/*****************
+  SET COLORS HERE
+ *****************/
+/**** Default state (no keyboard focus) ****/
+/* slider window - top & bottom borders, default state */
+div.anythingSlider .anythingWindow {
+	border-top: 3px solid #777;
+	border-bottom: 3px solid #777;
+}
+/* Navigation buttons, default state */
+div.anythingSlider .anythingControls ul a.cur, div.anythingSlider .anythingControls ul a {
+	background: #777;
+	color: #000;
+}
+/* start-stop button, stopped, default state */
+div.anythingSlider .start-stop {
+	background-color: #040;
+	color: #fff;
+}
+/* start-stop button, playing, default state */
+div.anythingSlider .start-stop.playing {
+	background-color: #800;
+}
+/* start-stop button, default hovered text color (when visible) */
+div.anythingSlider .start-stop:hover, div.anythingSlider .start-stop.hover {
+	color: #ddd;
+}
+
+/**** Active State (slider has keyboard focus) ****/
+/* slider window - top & bottom borders, active state */
+div.anythingSlider.activeSlider .anythingWindow {
+	border-color: #7C9127;
+}
+/* Navigation buttons, active state */
+div.anythingSlider.activeSlider .anythingControls ul a.cur, div.anythingSlider.activeSlider .anythingControls ul a {
+	background-color: #7C9127;
+}
+/* start-stop button, stopped, active state */
+div.anythingSlider .start-stop {
+	background-color: #080;
+	color: #fff;
+}
+/* start-stop button, playing, active state */
+div.anythingSlider .start-stop.playing {
+	background-color: #d00;
+}
+/* start-stop button, active slider hovered text color (when visible) */
+div.anythingSlider .start-stop:hover, div.anythingSlider .start-stop.hover {
+	color: #fff;
+}
+
+/***********************
+  COMMON SLIDER STYLING
+ ***********************/
+/* Overall Wrapper: 45px right & left padding for the arrows, 28px @ bottom for navigation */
+div.anythingSlider {
+	display: block;
+	margin: 0 auto;
+	overflow: visible !important; /* needed for Opera and Safari */
+	position: relative;
+	/*padding: 0 45px 28px 45px;*/
+}
+/* anythingSlider viewport window */
+div.anythingSlider .anythingWindow {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+/* anythingSlider base (original element) */
+.anythingBase {
+	background: transparent;
+	list-style: none;
+	position: absolute;
+	overflow: visible !important;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+/* all panels inside the slider */
+.anythingBase .panel {
+	background: transparent;
+	display: block;
+	overflow: hidden;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+.anythingBase .panel.vertical {
+	float: none;
+}
+
+/* Navigation Arrows */
+div.anythingSlider .arrow {
+	top: 50%;
+	position: absolute;
+	display: block;
+}
+div.anythingSlider .arrow a {
+	display: block;
+	height: 140px;
+	margin: -70px 0 0 0; /* half height of image */
+	width: 45px;
+	text-align: center;
+	outline: 0;
+	background: url(../images/default.png) no-repeat;
+}
+/* hide text, target the span so IE7 doesn't text-indent the link */
+div.anythingSlider .arrow a span { display: block; text-indent: -9999px; }
+/* back arrow */
+div.anythingSlider .back { left: 0; }
+div.anythingSlider .back a { background-position: left top; }
+div.anythingSlider .back a:hover, div.anythingSlider .back a.hover { background-position: left -140px; }
+div.anythingSlider .back.disabled { display: none; } /* disabled arrows, hide or reduce opacity: opacity: .5; filter: alpha(opacity=50); */
+/* forward arrow */
+div.anythingSlider .forward { right: 0; }
+div.anythingSlider .forward a { background-position: right top; }
+div.anythingSlider .forward a:hover, div.anythingSlider .forward a.hover { background-position: right -140px; }
+div.anythingSlider .forward.disabled { display: none; } /* disabled arrows, hide or reduce opacity: opacity: .5; filter: alpha(opacity=50); */
+
+/* Navigation Links */
+div.anythingSlider .anythingControls { outline: 0; display: none; }
+div.anythingSlider .anythingControls ul { margin: 0; padding: 0; float: left; }
+div.anythingSlider .anythingControls ul li { display: inline; }
+div.anythingSlider .anythingControls ul a {
+	font: 11px/18px Georgia, Serif;
+	display: inline-block;
+	text-decoration: none;
+	padding: 2px 8px;
+	height: 18px;
+	margin: 0 5px 0 0;
+	background-image: url(../images/default.png);
+	background-position: center -288px ;
+	background-repeat: repeat-x;
+	text-align: center;
+	outline: 0;
+	border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+}
+div.anythingSlider .anythingControls ul a:hover {
+	background-image: none;
+}
+/* Navigation size window */
+div.anythingSlider .anythingControls .anythingNavWindow { overflow: hidden; float: left; }
+
+/* slider autoplay right-to-left, reverse order of nav links to look better */
+div.anythingSlider.rtl .anythingControls ul a { float: right; } /* reverse order of nav links */
+div.anythingSlider.rtl .anythingControls ul { float: left; }    /* move nav link group to left */
+div.anythingSlider.rtl .anythingWindow {
+	direction: ltr;
+	unicode-bidi: bidi-override;
+}
+/* div.anythingSlider.rtl .start-stop { float: right; } */ /* move start/stop button - in case you want to switch sides */
+
+/* Autoplay Start/Stop button */
+div.anythingSlider .start-stop {
+	background-image: url(../images/default.png);
+	background-position: center -288px;
+	background-repeat: repeat-x;
+	padding: 2px 5px;
+	width: 40px;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+	z-index: 100;
+	outline: 0;
+	border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+}
+/* hide cell shading on hover - makes the button appear to come forward */
+div.anythingSlider .start-stop:hover, div.anythingSlider .start-stop.hover { background-image: none; }
+
+/* probably not necessary, but added just in case */
+div.anythingSlider, div.anythingSlider .anythingWindow, div.anythingSlider .anythingControls ul a, div.anythingSlider .arrow a, div.anythingSlider .start-stop {
+	transition-duration: 0;
+	-o-transition-duration: 0;
+	-moz-transition-duration: 0;
+	-webkit-transition-duration: 0;
+}
+
+/*
+	AnythingSlider v1.5.10 Minimalist Round Theme
+	By Rob Garrison
+*/
+
+/****** SET COLORS HERE *******/
+/* Default State */
+div.anythingSlider-csb-featured .anythingWindow {
+	border:none;
+}
+div.anythingSlider-csb-featured .anythingControls ul a {
+	border: none;
+	background: #333;
+}
+div.anythingSlider-csb-featured .anythingControls ul a:hover, div.anythingSlider-csb-featured .anythingControls ul a.cur {
+	background: #66bfdb;
+}
+div.anythingSlider-csb-featured .start-stop {
+	border: none;
+}
+div.anythingSlider-csb-featured .start-stop.playing {
+	background-color: #300;
+}
+div.anythingSlider-csb-featured .start-stop:hover, div.anythingSlider-csb-featured .start-stop.hover {
+	color: #ddd;
+}
+
+/* Active State */
+div.anythingSlider-csb-featured.activeSlider .anythingWindow {
+	border-color: #555;
+}
+div.anythingSlider-csb-featured.activeSlider .anythingControls ul a {
+	background-color: #555;
+	transition: background-color 0.3s;
+	-moz-transition: background-color 0.3s;
+	-webkit-transition: background-color 0.3s;
+	-o-transition: background-color 0.3s;
+}
+div.anythingSlider-csb-featured.activeSlider .anythingControls ul a:hover{
+	background: #40a5c7;
+}
+
+div.anythingSlider-csb-featured.activeSlider .anythingControls ul a.cur 
+{
+background: #66bfdb;
+}
+div.anythingSlider-csb-featured.activeSlider .start-stop.playing {
+	background-color: #f00;
+}
+div.anythingSlider-csb-featured .start-stop:hover, div.anythingSlider-csb-featured .start-stop.hover {
+	color: #fff;
+}
+
+/* Navigation Arrows */
+div.anythingSlider-csb-featured .arrow {
+	top: 50%;
+	position: absolute;
+	display: block;
+}
+div.anythingSlider-csb-featured .arrow a {
+	display: block;
+	height: 40px;
+	margin-top: -20px; /* half height of image */
+	width: 30px;
+	text-align: center;
+	outline: 0;
+	background: url(../images/arrows-minimalist.png) no-repeat;
+}
+div.anythingSlider-csb-featured .forward { right: 0; }
+div.anythingSlider-csb-featured .back { left: 0; }
+div.anythingSlider-csb-featured .forward a { background-position: right bottom; }
+div.anythingSlider-csb-featured .back a { background-position: left bottom; }
+div.anythingSlider-csb-featured .forward a:hover, div.anythingSlider-csb-featured .forward a.hover { background-position: right top; }
+div.anythingSlider-csb-featured .back a:hover, div.anythingSlider-csb-featured .back a.hover { background-position: left top; }
+
+/* Navigation Links */
+div.anythingSlider-csb-featured .anythingControls {
+	float: right;
+	position: absolute;
+	left: 50%;
+	bottom: 10%;
+	z-index: 100;
+	/*opacity: 0.90;
+	filter: alpha(opacity=90);*/
+}
+div.anythingSlider-csb-featured .anythingControls ul {
+	margin: 0;
+	z-index: 100;
+	position: relative;
+	left: -50%;
+}
+div.anythingSlider-csb-featured .anythingControls ul li {
+	display: block;
+	float: left;
+}
+div.anythingSlider-csb-featured .anythingControls ul a {
+	display: block;
+	height: 18px;
+	width: 18px;
+	margin: 4px;
+	padding: 0;
+	outline: 0;
+	border-radius: 9px;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+}
+
+/* Navigation size window arrows */
+div.anythingSlider-csb-featured .anythingControls li.next a span, div.anythingSlider-csb-featured .anythingControls li.prev a span {
+	text-indent: 1px;
+	margin-top: 3px;
+}
+div.anythingSlider-csb-featured .anythingControls li.prev a, div.anythingSlider-csb-featured .anythingControls li.next a {
+	color: #ddd;
+}
+div.anythingSlider-csb-featured .anythingControls li.next a:hover, div.anythingSlider-csb-featured .anythingControls li.prev a:hover {
+	color: #000;
+}
+
+/* slider autoplay right-to-left, reverse order of nav links to look better */
+div.anythingSlider-csb-featured.rtl .anythingControls ul a { float: right; } /* reverse order of nav links */
+div.anythingSlider-csb-featured.rtl .anythingControls ul { float: left; }    /* move nav link group to left */
+/* div.anythingSlider-csb-featured.rtl .start-stop { float: right; } */ /* move start/stop button - in case you want to switch sides */
+
+/* Autoplay Start/Stop button */
+div.anythingSlider-csb-featured .start-stop {
+	margin: 3px;
+	padding: 0;
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	position: relative;
+	bottom: 2px;
+	left: 0;
+	z-index: 100;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+/* Extra - replace defaults */
+div.anythingSlider-csb-featured {
+	padding: 0;
+}
+
+/* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
+div.anythingSlider-csb-featured .arrow a span, div.anythingSlider-csb-featured .anythingControls ul a span, div.anythingSlider-csb-featured .start-stop span {
+	display: block;
+	line-height: 1px; /* needed for IE7 */
+	text-indent: -9999px;
+}
+
+
+
